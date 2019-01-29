@@ -10,18 +10,33 @@ class App extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {products:[]};
+
+
     this.loadData = this.loadData.bind(this);
+    this.productList = this.productList.bind(this);
+    
     this.loadData();
+
   };
 
   loadData = () => {
+    let self = this;
     http.getProducts().then(data => {
-      console.log(data);
+      self.setState({products: data})
     }, err => {
-
-
     });
   };
+
+  productList = () => {
+    let list = this.state.products.map((product) => 
+      <div className='col-sm-4' key={product._id}> 
+        <Product title={product.title} price={product.price} imgURL={product.imgURL} />
+      </div>
+    );
+     return (list);
+  };
+
 
   render() {
     return (
@@ -32,8 +47,10 @@ class App extends Component {
             Edit <code>src/App.js</code> and save to reload.
           </p>
         </header>
-        <div className='App-main'>
-          <Product/>
+        <div className='container App-main'>
+          <div className='row pt-3 pb-3'>
+            {this.productList()}
+          </div>
         </div>
       </div>
     );
