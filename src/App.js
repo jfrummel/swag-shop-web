@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Product from './product/product.js'
 import HttpService from './services/http-service';
 
 const http = new HttpService();
 
 class App extends Component {
 
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.loadData = this.loadData.bind(this);
     this.loadData();
@@ -18,27 +19,22 @@ class App extends Component {
       console.log(data);
     }, err => {
 
-    
+
     });
   };
 
   render() {
     return (
-      <div className="container App">
+      <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
+        <div className='App-main'>
+          <Product/>
+        </div>
       </div>
     );
   }
