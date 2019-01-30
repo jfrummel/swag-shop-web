@@ -1,0 +1,7 @@
+.wishCard {
+    border: 1px solid gainsboro;
+    text-align: center;
+    display: block;
+    margin: auto;
+    overflow: auto;
+}
