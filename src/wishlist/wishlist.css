@@ -4,4 +4,6 @@
     display: block;
     margin: auto;
     overflow: auto;
+    height: 100%;
 }
+

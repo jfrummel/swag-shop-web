@@ -11,7 +11,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { products: [] };
+    this.state = {products:[]};
 
 
     this.loadData = this.loadData.bind(this);

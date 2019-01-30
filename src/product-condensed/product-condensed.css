@@ -1,0 +1,13 @@
+.list-wish li {
+    display: flex;
+    vertical-align: middle;
+}
+
+.list-wish li a {
+    margin-right: 12px;
+    border-color: transparent;
+}
+
+.wishProduct {
+    padding-top: 7px;
+}

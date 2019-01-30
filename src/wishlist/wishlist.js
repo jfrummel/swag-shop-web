@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './wishlist.css';
 import ProductCondensed from './../product-condensed/product-condensed';
+import DataService from '../services/data-service';
+import NotificationService from '../services/notification-service';
 
 class WishList extends Component {
     constructor(props) {
@@ -37,9 +39,9 @@ class WishList extends Component {
     render() {
         return (
             <div className='card wishCard'>
-                <div className='card-block'>
+                <div className='card-block wishBlock'>
                     <h4 className='card-title'>Wish List</h4>
-                    <ul className='list-group'>
+                    <ul className='list-group list-wish'>
                         {this.createWishList()}
                     </ul>
                 </div>
